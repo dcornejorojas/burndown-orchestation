@@ -1,9 +1,12 @@
 [submodule "burndown-profile"]
 	path = burndown-profile
 	url = https://github.com/dcornejorojas/burndown-profile.git
+	branch = master
 [submodule "burndown-ticket"]
 	path = burndown-ticket
 	url = https://github.com/dcornejorojas/burndown-ticket.git
+	branch = master
 [submodule "burndown-gateway"]
 	path = burndown-gateway
 	url = https://github.com/dcornejorojas/burndown-gateway.git
+	branch = master
