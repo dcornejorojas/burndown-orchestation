@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  profile:
+    container_name: "profile"
+    image: "profile"
+    build: "burndown-profile"
+    ports:
+      - "3000"
+    networks: 
+      - lab
+  ticket:
+    container_name: "ticket"
+    image: "ticket"
+    build: "burndown-ticket"
+    ports:
+      - "3001"
+    networks: 
+      - lab
+  burndown-gateway:
+    build: "burndown-gateway"
+    ports:
+      - "80:80"
+    networks: 
+      - lab
+    depends_on:
+      - "profile"
+      - "ticket"
+networks: 
+  lab:
+    ipam: 
+      driver: default
+      config: 
+        - subnet: "172.16.238.0/24"
